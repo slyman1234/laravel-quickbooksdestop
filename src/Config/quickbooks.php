@@ -13,10 +13,6 @@ return [
     'QB_QUICKBOOKS_MAX_RETURNED' =>env('QB_QUICKBOOKS_MAX_RETURNED'),
     'QB_PRIORITY_ITEM' => env('QB_PRIORITY_ITEM'),
     'QB_QUICKBOOKS_MAILTO'=> env('QB_QUICKBOOKS_MAILTO'),
-
-    
-
-
     'error_map'     => array(
         '*' => array(Sylvester\Quickbooks\Services\ErrorHandler::class,'catchallErrors')
     ),
@@ -29,7 +25,7 @@ return [
    
     ), // An array of callback hooks
 
-    'soap'			=> array(
+    'soap'   => array(
     					'server' 	=> constant(env('QB_SOAPSERVER')), // A pure-PHP SOAP server (no PHP ext/soap extension required, also makes debugging easier)
     					'options'	=> [] // See http://www.php.net/soap
     ),
