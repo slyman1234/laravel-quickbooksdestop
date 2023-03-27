@@ -1,0 +1,21 @@
+{
+    "name": "sylvester/quickbooks",
+    "description": "quickbooks desktop integration with laravel app",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sylvester\\Quickbooks\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sylvester Izuyon"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+       "consolibyte/quickbooks": "dev-master"
+    }
+    
+}
