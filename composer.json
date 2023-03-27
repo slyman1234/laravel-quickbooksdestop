@@ -13,10 +13,7 @@
             "name": "Sylvester Izuyon"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-       "consolibyte/quickbooks": "dev-master"
-    }
+    "minimum-stability": "stable",
+    "prefer-stable": true
     
 }
