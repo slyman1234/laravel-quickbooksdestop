@@ -5,7 +5,7 @@ return [
     'qb_password'   => env('QB_PASSWORD'),
 
     'qb_timezone'   => env('QB_TIMEZONE'),
-    'qb_log_level'  => constant(env('QB_LOGLEVEL')),
+    'qb_log_level'  => env('QB_LOGLEVEL'),
     'qb_mem_limit'  => env('QB_MEMLIMIT'),
 
     'QB_QUICKBOOKS_CONFIG_LAST' => env('QB_QUICKBOOKS_CONFIG_LAST'),
