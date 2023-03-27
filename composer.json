@@ -13,5 +13,7 @@
             "name": "Sylvester Izuyon"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "prefer-stable": true
+    
 }
