@@ -1,7 +1,7 @@
 {
     "name": "sylvester/quickbooks",
     "description": "quickbooks desktop integration with laravel app",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
