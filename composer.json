@@ -1,7 +1,7 @@
 {
     "name": "sylvester/quickbooks",
     "description": "quickbooks desktop integration with laravel app",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -13,7 +13,10 @@
             "name": "Sylvester Izuyon"
         }
     ],
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+       "consolibyte/quickbooks": "dev-master"
+    }
     
 }
