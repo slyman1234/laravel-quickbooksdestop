@@ -11,7 +11,8 @@ Require the QuickBooks PHP DevKit (QuickBooks integration support)
 
     composer require "consolibyte/quickbooks:dev-master"
 
-Then require the this using :
+Then require this package using :
 
     composer require sylvester/quickbooks
 
+Next add the below to your  .env
