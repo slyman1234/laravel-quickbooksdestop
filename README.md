@@ -7,12 +7,37 @@ Following the instructions below accordingly in other  to integrate and use this
 
 # Installation
 
-Require the QuickBooks PHP DevKit (QuickBooks integration support)
+   ## Require the QuickBooks PHP DevKit (QuickBooks integration support)
 
     composer require "consolibyte/quickbooks:dev-master"
 
-Then require this package using :
+  ## Then require this package using :
 
     composer require sylvester/quickbooks
 
-Next add the below to your  .env
+## Next add the below to your .env :
+
+     QB_DSN=
+     QB_USERNAME=quickbooks
+     QB_PASSWORD=password
+     QB_TIMEZONE=America/New_York
+     QB_LOGLEVEL=QUICKBOOKS_LOG_DEVELOP
+     QB_MEMLIMIT=512M
+     QB_SOAPSERVER=QUICKBOOKS_SOAPSERVER_BUILTIN
+     QB_QUICKBOOKS_CONFIG_LAST=last
+     QB_QUICKBOOKS_CONFIG_CURR=curr
+     QB_QUICKBOOKS_MAX_RETURNED=100
+     QB_PRIORITY_ITEM=0
+     QB_QUICKBOOKS_MAILTO=support@onehealthng.com
+
+
+## NOTE: Your database connection in your .env needs to be set.
+
+
+
+
+
+
+
+
+
