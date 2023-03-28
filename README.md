@@ -42,7 +42,9 @@ Following the instructions below accordingly in other  to integrate and use this
 
     php artisan vendor:publish --tag=config
 
+# Then visit your the url below to see if it works.
 
+    https://yourappurl/qbd-webconnector/qbwc
 
 
 
