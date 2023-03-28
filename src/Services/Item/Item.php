@@ -27,7 +27,7 @@ class Item
 		        	<SalesDesc >'.strip_tags($products->brief_info).'</SalesDesc> 
 					<SalesPrice >'.doubleval($products->discount_amount).'</SalesPrice> 
 					<IncomeAccountRef>
-					<FullName >Sales</FullName>
+					<FullName >Merchandise Sales</FullName>
 			        </IncomeAccountRef>
 					<COGSAccountRef>
 					<FullName >Cost of Goods Sold</FullName>
