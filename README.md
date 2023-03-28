@@ -85,13 +85,12 @@ Follow the the below application to use the package in your project .
            }
 
     
-           //
-         
+           //saving item to database function
 
            public function saveitem(Request $request){
 
     
-            // below you queue the  id of each item incase of multiple item 
+            // below you queue the  id of each item so that quickbooks webconnector can pick it up.
             
             $this->QBD->enqueue(QUICKBOOKS_ADD_INVENTORYITEM, $request->input('id'));
          
