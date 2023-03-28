@@ -4,7 +4,6 @@
 Following the instructions below accordingly in other  to integrate and use this package in your laravel project.
 
 
-
 # Installation
 
    ## Require the QuickBooks PHP DevKit (QuickBooks integration support)
@@ -31,7 +30,27 @@ Following the instructions below accordingly in other  to integrate and use this
      QB_QUICKBOOKS_MAILTO=support@onehealthng.com
 
 
-## NOTE: Your database connection in your .env needs to be set.
+  ### NOTE: Your database connection in your .env needs to be set.
+
+# ADD the following be to your Config/app  under providers:
+
+     
+     Sylvester\Quickbooks\Providers\QuickbookdProvider::class
+     
+     
+# After that then run the following below: 
+
+    php artisan vendor:publish --tag=config
+
+
+
+
+
+
+
+
+
+
 
 
 
