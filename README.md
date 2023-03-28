@@ -47,6 +47,58 @@ Following the instructions below accordingly in other  to integrate and use this
     https://yourappurl/qbd-webconnector/qbwc
 
 
+# USAGE
+
+Follow the the below application to use the package in your project .
+
+
+ # 1. ADDING A NEW CUSTOMER
+ 
+ In other to add a new customer to quickbooks using this package your controller will look like below:
+ 
+ 
+ 
+ 
+       <?php
+
+       namespace App\Http\Controllers;
+
+       use Illuminate\Http\Request;
+       
+       // require the package 
+       use Sylvester\Quickbooks\Quickbooksd;
+
+       class Additemcontroller extends Controller
+        {
+              
+             // make this a protected constant
+             
+            protected $QBD;
+
+             //implement a construct
+             public function __construct()
+             {  
+             $this->QBD  = new Quickbooksd;
+    	
+             $this->QBD->connect();
+    	
+           }
+
+    
+           //
+         
+
+           public function saveitem(Request $request){
+
+    
+            // below you queue the  id of each item incase of multiple item 
+            
+            $this->QBD->enqueue(QUICKBOOKS_ADD_INVENTORYITEM, $request->input('id'));
+         
+
+           }
+         }
+
 
 
 
