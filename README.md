@@ -52,9 +52,9 @@ Following the instructions below accordingly in other  to integrate and use this
 Follow the the below application to use the package in your project .
 
 
- # 1. ADDING A NEW CUSTOMER
+ # 1. ADDING A NEW INVENTORY
  
- In other to add a new customer to quickbooks using this package your controller will look like below:
+ In other to add a new inventory to quickbooks using this package your example controller will look like below:
  
  
  
@@ -71,7 +71,7 @@ Follow the the below application to use the package in your project .
        class Additemcontroller extends Controller
         {
               
-             // make this a protected constant
+             // make this a protected variable
              
             protected $QBD;
 
@@ -101,9 +101,52 @@ Follow the the below application to use the package in your project .
 
 
 
+ # 2. ADDING A NEW CUSTOMER
+ 
+ In other to add a new customer to quickbooks using this package your example controller will look like below:
+ 
+ 
+    <?php
+
+    namespace App\Http\Controllers;
+
+    use Illuminate\Http\Request;
+    
+    // require the package 
+    use Sylvester\Quickbooks\Quickbooksd;
+
+    class Customercontroller extends Controller
+    {
+
+    // make this a protected variable
+    protected $QBD;
+
+    public function __construct()
+    {  
+        $this->QBD  = new Quickbooksd;
+    	
+        $this->QBD->connect();
+    	
+    }
 
 
 
+    //saving customer to database function
+     
+    public function savecustomer(Request $request){
+
+     // below you queue the  id of each customer  so that quickbooks webconnector can pick it up.
+     
+     
+     $this->QBD->enqueue(QUICKBOOKS_ADD_CUSTOMER, $request->input('id'));
+    
+
+    }
+    
+    
+    }
+
+ 
 
 
 
