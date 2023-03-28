@@ -121,6 +121,7 @@ Follow the the below application to use the package in your project .
     // make this a protected variable
     protected $QBD;
 
+    //implement a construct
     public function __construct()
     {  
         $this->QBD  = new Quickbooksd;
@@ -149,6 +150,66 @@ Follow the the below application to use the package in your project .
  
 
 
+
+ # 3. ADDING A NEW SALES
+ 
+ In other to add a new sales to quickbooks using this package your example controller will look like below:
+ 
+ 
+     <?php
+
+     namespace App\Http\Controllers;
+
+     use Illuminate\Http\Request;
+     
+     // require the package 
+     use Sylvester\Quickbooks\Quickbooksd;
+
+     class Salescontroller extends Controller
+     {
+    
+     // make this a protected variable
+     protected $QBD;
+
+
+      //implement a construct
+      public function __construct()
+     {  
+        $this->QBD  = new Quickbooksd;
+    	
+        $this->QBD->connect();
+    	
+      }
+ 
+        /saving sales to database function
+        
+       public function savesales(Request $request){
+
+    
+        // below you queue the  id of each orders from the orders table not batch_id so that quickbooks webconnector can pick it up.
+     
+        $this->QBD->enqueue(QUICKBOOKS_ADD_SALESORDER, $request->input('id'));
+    
+
+         }
+         }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
