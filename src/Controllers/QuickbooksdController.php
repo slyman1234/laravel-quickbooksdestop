@@ -35,12 +35,32 @@ class QuickbooksdController extends Controller
         }
 
         if($contentType == 'text/xml'){
-            $tidy = new \tidy();
-            $response = $tidy->repairString($response, ['input-xml'=> 1, 'indent' => 0, 'wrap' => 0]);
+
+            if(!empty($response)){
+
+
+                $dom = new \DOMDocument();
+                $dom->loadXML($response);
+                $response = $dom->saveXML($dom, LIBXML_NOEMPTYTAG);
+                // $tidy = new \tidy();
+                // $response = $tidy->repairString($response, ['input-xml'=> 1, 'indent' => 0, 'wrap' => 0]);
+                
+           
+                //   $doc = new DOCdocument
+
+            }else{
+                
+                
+                Log::info(print_r($response, true));
+            
+            
+            }
+            
+             
+
         }
 
-        // Uncomment log if you want to see the request headers submitted from WebConnector
-         //Log::info(print_r(getallheaders(), true));
+        Log::info(print_r(getallheaders(), true));
 
         return response($response,200)->header('Content-Type', $contentType);
 
