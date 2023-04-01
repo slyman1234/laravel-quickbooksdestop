@@ -166,7 +166,7 @@ class Importitem
             ->update(['quantity' => $quantity]);
 
 			
-			Log::info(print_r(array($requestID, $user, $action, $ID, $extra, &$err, $last_action_time, $last_actionident_time, $xml, $idents), true));
+		//	Log::info(print_r(array($requestID, $user, $action, $ID, $extra, &$err, $last_action_time, $last_actionident_time, $xml, $idents), true));
 		  
 			//trigger_error(print_r(array_keys($arr), true));
 			

@@ -51,7 +51,7 @@ class QuickbooksdController extends Controller
             }else{
                 
                 
-                Log::info(print_r($response, true));
+              //  Log::info(print_r($response, true));
             
             
             }
@@ -60,7 +60,7 @@ class QuickbooksdController extends Controller
 
         }
 
-        Log::info(print_r(getallheaders(), true));
+       // Log::info(print_r(getallheaders(), true));
 
         return response($response,200)->header('Content-Type', $contentType);
 
