@@ -120,7 +120,6 @@ class Importitem
 				'created_at' => $Item->getChildDataAt($ret . ' TimeCreated'),
 				'updated_at' => $Item->getChildDataAt($ret . ' TimeModified'),
 				'name' => $Item->getChildDataAt($ret . ' Name'),
-				'brief_info' => $Item->getChildDataAt($ret . ' FullName'),
 				'identifier' => mt_rand(),
 				'specification' => $Item->getChildDataAt($ret . ' specification'),
 				'quantity' =>  $Item->getChildDataAt($ret . ' QuantityOnHand')
@@ -129,7 +128,7 @@ class Importitem
 			
 			$look_for = array(
 				'discount_amount' => array( 'SalesOrPurchase Price', 'SalesAndPurchase SalesPrice', 'SalesPrice' ),
-				'description' => array( 'SalesOrPurchase Desc', 'SalesAndPurchase SalesDesc', 'SalesDesc' ),
+				'brief_info' => array( 'SalesOrPurchase Desc', 'SalesAndPurchase SalesDesc', 'SalesDesc' ),
 				
 			
 			); 
@@ -158,12 +157,14 @@ class Importitem
 
 			$listidentity = $arr['listidentity'];
             $quantity = $arr['quantity'];
+			$discountamount = $arr['discount_amount'];
 
 			DB::table('products')->insertOrIgnore($arr);
 			
 			DB::table('products')
             ->where('listidentity', '=', $listidentity)
-            ->update(['quantity' => $quantity]);
+            ->update(
+			['quantity' => $quantity, 'discount_amount' => $discountamount]);
 
 			
 		//	Log::info(print_r(array($requestID, $user, $action, $ID, $extra, &$err, $last_action_time, $last_actionident_time, $xml, $idents), true));
