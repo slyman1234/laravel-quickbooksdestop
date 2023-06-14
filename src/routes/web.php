@@ -12,6 +12,7 @@ use Sylvester\Quickbooks\Controllers\QuickbooksdController;
 Route::group(['prefix' => 'qbd-webconnector', 'namespace' => 'Sylvester\Quickbooks'], function(){
 
 	Route::any('/qbwc', [QuickbooksdController::class, 'initQBWC']);
+	Route::get('/logdelete', [QuickbooksdController::class, 'delete']);
 	
 	
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Sylvester\Quickbooks\Quickbooksd;
 use Illuminate\Support\Facades\Log;
+use DB;
 
 class QuickbooksdController extends Controller
 {
@@ -66,6 +67,14 @@ class QuickbooksdController extends Controller
 
     }
 
+
+    public function Delete(){
+
+
+
+        DB::table('quickbooks_log')->truncate();
+        return response("Successfully deleted",200);
+    }
   
 
 
